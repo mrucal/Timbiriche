@@ -3,12 +3,13 @@
 <head>
     <title>CellWin</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- MIS JS -->
     <script src = "utils.js"></script>
     <script src = "table.js"></script>
@@ -31,12 +32,23 @@
     </nav>
 
     <div class="row mb-5" style="margin-top: 65px;">
-        <div class="col-8">
-            <div class="border border-dark rounded-lg bg-light p-3  ml-5 " >
+        <div class="col-8 pl-5">
+            
+            <div class="border border-dark rounded-lg bg-light p-3 mb-2" >
                 <table class="" id="tablehtml"></table>
                 <!--<button class="mt-4 btn btn-primary btn-block w-auto" id="confirmar2">Confirmar</button>-->
             </div>  
-            
+            <div class="text-center"><a href="#" class="text-center p-0 m-auto" data-toggle="collapse" data-target="#demo">Instrucciones</a></div>
+            <div id="demo" class="collapse border border-dark rounded-lg bg-light p-3 mb-5 " >
+                <div id="instrucciones">
+                    <p class="font-weight-bold mb-0">Objetivo</p>
+                    <p>Conquistar más celdas que el jugador contrario.</p>
+                    <p class="font-weight-bold mb-0">Controles</p>
+                    <p>El jugador que tiene el turno elige un lado de una celda pulsando en la celda (un click: lado superior, dos clicks: lado derecho, tres clicks: lado inferior, cuatro clicks: lado izquierdo). Para confirmar la jugada pulsar el botón "Confirmar" del panel derecho.</p>
+                    <p>El último jugador que completa una celda (los cuatro lados ocupados por un jugador, sin importar quien) gana la celda y puede volver a ocupar un lado de una celda.</p>
+                    <p>Se indica el jugador que tiene el turno activo mediante una flecha a la derecha del nombre del jugador.</p>
+                </div>
+            </div> 
         </div>
         <div class="col-4  ">
             <div id="divj0" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3  rounded-bottom">  
@@ -52,7 +64,7 @@
         </div>
     </div>
 
-    <nav class="navbar  bg-dark fixed-bottom py-1">
+    <nav class="navbar  bg-dark fixed-bottom py-2">
         <div class="mx-auto">
             <span class="float-left text-secondary mr-5"> Contacto: </span>
             <a href="https://github.com/mrucal/" class="mx-3"><i class="fab fa-github fa-2x"></i></a>

@@ -124,3 +124,7 @@ table {
     border-left: 1px solid black;
     margin: 10px auto;
 }
+
+#instrucciones p{
+    margin-bottom: 10px;
+}
