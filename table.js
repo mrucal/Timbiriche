@@ -5,19 +5,22 @@ class Table{
     constructor(t, r, c){
         this.rows = r;
         this.cols = c;
-        this.table_html = t;
+        this.table_id = t;
         this.restantes = r*c;
 
         this.table = new Array(this.rows);
         for(var i = 0; i < this.rows; i++){
             this.table[i] = new Array(this.cols);
             for(var j = 0; j < this.cols; j++)
+                // 0: jugador0 1: jugador1 2: linea vacia
                 this.table[i][j] = [2, 2, 2, 2];
         }
         this.createTable();
     }
 
     createTable() {
+        // Construir la tabla con el numero de filas y columnas indicadas
+        // Formato del id de cada celda: rn_filacn_columna
         var contenido = "";
         for(var i = 0; i < this.rows; i++){
             contenido += "<tr>"
@@ -26,10 +29,11 @@ class Table{
             }
             contenido += "</tr>";
         }
-        $(this.table_html).html(contenido);
+        $(this.table_id).html(contenido);
     }
 
     hasJugada(r,c,k){
+        // True si la linea k de la celda r,c o la celda analoga esta ocupada
         var has_jugada = (this.table[r][c][k] != 2);
         switch(k){
             case 0:
@@ -53,6 +57,8 @@ class Table{
     }
 
     insertarJugada(r,c,k,jugador){
+        // Insertar linea del jugador en la celda r,c posicion k (puede ser top, right, bottom o left)
+        // y en su analoga
         this.table[r][c][k] = jugador; 
         switch(k){
             case 0:
@@ -75,33 +81,13 @@ class Table{
     }
 
     isCeldaCompleta(r,c){
+        // True si las cuatro posiciones de la celda (top, right, bottom o left)
+        // estan ocupadas por un jugador
         var completa = false;
         for(var k = 0; k < 4; k++)
             if(this.table[r][c][k]==2)
                 return false;
         return true;
-        /*var top = false, right = false, bottom = false, left = false;
-        
-        if(r!=0)
-            top     =   (this.table[r][c][0]!=2 || this.table[r-1][c][2]!=2);
-        if(c<this.cols-1)
-            right   =   (this.table[r][c][1]!=2 || this.table[r][c+1][3]!=2);
-        if(r<this.rows-1)
-            bottom  =   (this.table[r][c][2]!=2 || this.table[r+1][c][0]!=2);
-        if(c!=0)
-            left    =   (this.table[r][c][3]!=2 || this.table[r][c-1][1]!=2);
-
-        return top && right && bottom && left;*/
-
-        
-        
     }
-
-    getJugada(r,c,k){
-        return this.table[r][c][k];
-    }
-
-    alertCelda(i,j){
-        window.alert("Celda ("+i+","+j+"): "+this.table[i][j][0]);
-    }
+    
 }
