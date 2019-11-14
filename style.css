@@ -1,0 +1,114 @@
+html, body {
+    margin:0;
+    padding:0;
+    height:100%
+}
+.fondo {
+    position:relative;
+    min-height:100%;
+    background:LightSalmon;
+}
+.contenedor {
+    width:80%;
+    height:80%;
+    background:PeachPuff ;
+    border: 5px solid Gold;
+    border-radius: 50px;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+}
+/*html{
+    background: green;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0%;
+}
+body{
+    background: red;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}*/
+.empty, .full{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    background: #838383b9;
+    width: 50px;
+    height: 50px;
+}
+
+#confirmar{
+    margin: 0 auto;
+}
+
+.empty:hover{
+    background: #dadadab9;
+}
+
+.j0{
+    background: #87CEEBB9;
+}
+
+.j1{
+    background: #FF6347B9;
+}
+
+.t0{
+    border-top:3px solid RoyalBlue;
+}
+
+.l0{
+    border-left:3px solid RoyalBlue;
+}
+
+.r0{
+    border-right:3px solid RoyalBlue;
+}
+
+.b0{
+    border-bottom:3px solid RoyalBlue;
+}
+
+.t1{
+    border-top:3px solid Crimson;
+}
+
+.l1{
+    border-left:3px solid Crimson;
+}
+
+.r1{
+    border-right:3px solid Crimson;
+}
+
+.b1{
+    border-bottom:3px solid Crimson;
+}
+
+.ts{
+    border-top:3px solid LimeGreen;
+}
+
+.ls{
+    border-left:3px solid LimeGreen;
+}
+
+.rs{
+    border-right:3px solid LimeGreen;
+}
+
+.bs{
+    border-bottom:3px solid LimeGreen;
+}
+
+table {
+    border-spacing: 0px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    margin: 10px auto;
+}

@@ -2,88 +2,28 @@
 <html>
 <head>
     <title>TablaWin</title>
-    <style>
-        html, body {
-            margin:0;
-            padding:0;
-            height:100%
-        }
-        .wrap {
-            position:relative;
-            min-height:100%;
-            background:#42ffc6;
-        }
-        .abs {
-            width:80%;
-            height:80%;
-            background:red;
-            position:absolute;
-            left:0;
-            right:0;
-            top:0;
-            bottom:0;
-            margin:auto;
-        }
-        /*html{
-            background: green;
-            height: 100%;
-            width: 100%;
-            padding: 0;
-            margin: 0%;
-        }
-        body{
-            background: red;
-            width: 90%;
-            height: 80%;
-            margin: auto;
-        }*/
-        td{
-            border: 1px solid black;
-            width: 25px;
-            height: 25px;
-        }
-
-        .at{
-            border-top:2px solid blue;
-        }
-        
-        .bt{
-            border-right:2px solid violet;
-        }
-        table {
-            border-spacing: 0px;
-            margin: 10px auto;
-        }
-    </style>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src = "utils.js"></script>
+    <script src = "table.js"></script>
+    <script src = "jugador.js"></script>
+    <script src = "juego.js"></script>
     <script>
-    $(document).ready(function(){
+        
+        $(document).ready(function(){
+            var juego = new Juego("#tablehtml");
+            //juego.inicializarJuego();
+        });
 
-        $("td").click(function(){
-            alert("CLICK!");
-        })
-    });
-    
-    </script>-->
+    </script>
 </head>
 <body>
-    <div class="wrap">
-        <div class="abs">
-            <table class="egt">
-                <tr>
-                    <td class="at bt"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
+    <div class="fondo">
+        <div class="contenedor">
+            <table id="tablehtml"></table>
+            <button id="confirmar">Confirmar</button>
         </div>
-    </div>
-    
+    </div>    
 </body>
 </html>
 
