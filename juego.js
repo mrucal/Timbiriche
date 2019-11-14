@@ -1,11 +1,13 @@
 class Juego{
 
     constructor(id_tabla){        
-        this.table = new Table(id_tabla,4,4);
+        this.table = new Table(id_tabla,4,5);
         this.jugadores = new Array(2);
-        this.jugadores[0] = new Jugador("m");
-        this.jugadores[1] = new Jugador("a");
+        this.jugadores[0] = new Jugador("m","pj0");
+        this.jugadores[1] = new Jugador("a","pj1");
         this.turno = 0;
+        $("#turno"+this.turno).show();
+        $("#turno"+((this.turno+1)%2)).hide();
         this.ultima_celda = null;
         this.nclick = -1;
         this.positions = ["t","r","b","l"];
@@ -118,20 +120,32 @@ class Juego{
 
         // Si no quedan celdas mostrar el ganador
         if(this.table.restantes==0)
-            if((this.jugadores[0].puntos>this.jugadores[1].puntos))
-                alert("Gana Jugador AZUL!");
-            else if((this.jugadores[0].puntos<this.jugadores[1].puntos))
-                alert("Gana Jugador ROJO!");
-            else 
-                alert("EMPATE!");        
+            if((this.jugadores[0].puntos>this.jugadores[1].puntos)){
+                //alert("Gana Jugador AZUL!");
+                $("#divj0").addClass("bgreen");
+                $("#divj0").removeClass("border border-dark");
+            }else if((this.jugadores[0].puntos<this.jugadores[1].puntos)){
+                //alert("Gana Jugador ROJO!");
+                $("#divj1").addClass("bgreen");
+                $("#divj1").removeClass("border border-dark");
+            }else {
+                //alert("EMPATE!");    
+                $("#divj0").addClass("bgreen");
+                $("#divj0").removeClass("border border-dark");
+                $("#divj1").addClass("bgreen");  
+                $("#divj1").removeClass("border border-dark");
+            }  
     }
 
     cambiarTurno(){
 
         // Reiniciar valores y cambiar de jugador
+        $("#turno"+this.turno).hide();
         this.turno = (this.turno+1)%2;
+        $("#turno"+this.turno).show();
         this.ultima_celda = null;
         this.nclick = -1; 
+        
 
     }
 

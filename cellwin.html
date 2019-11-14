@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CellWin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- MIS JS -->
+    <script src = "utils.js"></script>
+    <script src = "table.js"></script>
+    <script src = "jugador.js"></script>
+    <script src = "juego.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            var juego = new Juego("#tablehtml");
+        });
+
+    </script>
+</head>
+<body class="bg-secondary pr-5 py-5">
+    <!--<div class="fondo">
+        <div class="contenedor">-->
+
+    <nav class="navbar navbar-primary bg-primary fixed-top py-0">
+        <h2 class="navbar-text display-5"><kbd>CellWin</kbd> <small class="ml-4 font-weight-light text-dark"> Un juego sencillo muuuuy adictivo</small></h2>
+    </nav>
+
+    <div class="row mb-5" style="margin-top: 65px;">
+        <div class="col-8">
+            <div class="border border-dark rounded-lg bg-light p-3  ml-5 " >
+                <table class="" id="tablehtml"></table>
+                <!--<button class="mt-4 btn btn-primary btn-block w-auto" id="confirmar2">Confirmar</button>-->
+            </div>  
+            
+        </div>
+        <div class="col-4  ">
+            <div id="divj0" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3  rounded-bottom">  
+                <h2 class="j0 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 1 <i id="turno0" class="green fas fa-chevron-circle-left"></i></h2> 
+                <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj0">0</kbd> Puntos</h4>
+            </div> 
+            
+            <div id="divj1" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3 rounded-top">  
+                    <h2 class="j1 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 2 <i id="turno1" class="green fas fa-chevron-circle-left"></i></h2> 
+                    <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj1">0</kbd> Puntos</h4>
+                </div> 
+                <button class="btn btn-primary btn-block w-auto overflow-auto"  style="margin-top:-235px;margin-bottom:-5px;-right: 10px;" id="confirmar">Confirmar</button> 
+        </div>
+    </div>
+
+    <nav class="navbar  bg-dark fixed-bottom py-1">
+        <div class="mx-auto">
+            <span class="float-left text-secondary mr-5"> Contacto: </span>
+            <a href="https://github.com/mrucal/" class="mx-3"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/mrucal/" class="mx-3"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="mailto:rucalgr@gmail.com" class="ml-3"><i class="fas fa-envelope fa-2x"></i></a>
+        </div>
+        
+    </nav>
+
+</body>
+</html>
+

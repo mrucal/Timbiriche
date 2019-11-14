@@ -50,6 +50,10 @@ body{
     background: #dadadab9;
 }
 
+.r-20{
+    border-radius: 20px;
+}
+
 .j0{
     background: #87CEEBB9;
 }
@@ -104,6 +108,14 @@ body{
 
 .bs{
     border-bottom:3px solid LimeGreen;
+}
+
+.green{
+    color: LimeGreen;
+}
+
+.bgreen{
+    border:3px solid LimeGreen;
 }
 
 table {
