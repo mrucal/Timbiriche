@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CellWin</title>
+    <title>CellWin Game</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -18,7 +18,23 @@
     <script>
         
         $(document).ready(function(){
-            var juego = new Juego("#tablehtml");
+            $("#config").click(function(){
+                var nj0 = $("#form_namej0").val()=="" ? $("#form_namej0").attr("placeholder") : $("#form_namej0").val();
+                var nj1 = $("#form_namej1").val()=="" ? $("#form_namej1").attr("placeholder") : $("#form_namej1").val();
+                if($("#form_rows").val()>=3){
+                    if($("#form_cols").val()>=3){
+                        if($("#form_cols").val()<=16){
+                            var juego = new Juego("#tablehtml",$("#form_rows").val(),$("#form_cols").val(),nj0,nj1);
+                            $("#div_config").hide();
+                            $("#div_table").show();
+                            $("#div_instrucciones").show();
+                        }else
+                            alert("Máximo 16 columnas");
+                    }else
+                        alert("Mínimo 3 columnas");
+                }else
+                alert("Mínimo 3 filas");
+            });
         });
 
     </script>
@@ -33,35 +49,81 @@
 
     <div class="row mb-5" style="margin-top: 65px;">
         <div class="col-8 pl-5">
+
+            <!-- Configuracion inicial -->
+            <div id="div_config" class="border border-dark rounded-lg bg-light p-3 mb-2" >
+                <form class="w-75 mx-auto" action="#">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="form_namej0">Nombre primer jugador</label>
+                            <input type="text" class="form-control" id="form_namej0" placeholder="Jugador 1">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="form_namej1">Nombre segundo jugador</label>
+                            <input type="text" class="form-control" id="form_namej1" placeholder="Jugador 2">
+                        </div>
+                    </div>
+                    <div class="form-row w-100 mx-auto">
+                            <div class="form-group col-md-3  "></div>
+                        <div class="form-group col-md-1  ">
+                            <label  for="form_rows">Filas</label>
+                        </div>
+                        <div class="form-group col-md-2  ">
+                            <input class="form-control" type="number" value="4" id="form_rows">
+                        </div>   
+                        <div class="form-group col-md-2  "></div>
+                        <div class="form-group col-md-2  ">
+                            <label for="form_cols">Columnas</label>
+                        </div>
+                        <div class="form-group col-md-2  ">
+                            <input class="form-control" type="number" value="5" id="form_cols">
+                        </div>                                               
+                    </div>
+                    <div class="form-row ">
+                            <button type="submit" id="config" class="btn btn-primary mx-auto w-auto">Aceptar</button>                                              
+                    </div>
+                    
+                </form>
+            </div>  
+            <!-- FIN Configuracion inicial-->
             
-            <div class="border border-dark rounded-lg bg-light p-3 mb-2" >
+            <!-- Tabla de juego -->
+            <div id="div_table" style="display: none;" class="border border-dark rounded-lg bg-light p-3 mb-2" >
                 <table class="" id="tablehtml"></table>
                 <!--<button class="mt-4 btn btn-primary btn-block w-auto" id="confirmar2">Confirmar</button>-->
             </div>  
-            <div class="text-center"><a href="#" class="text-center p-0 m-auto" data-toggle="collapse" data-target="#demo">Instrucciones</a></div>
+            <!-- FIN Tabla de juego-->
+
+            <!-- Caja de Instrucciones-->
+            <div id="div_instrucciones" style="display: none;" class="text-center font-weight-bold"><a href="#" class="text-center p-0 m-auto" data-toggle="collapse" data-target="#demo">Instrucciones</a></div>
             <div id="demo" class="collapse border border-dark rounded-lg bg-light p-3 mb-5 " >
                 <div id="instrucciones">
                     <p class="font-weight-bold mb-0">Objetivo</p>
                     <p>Conquistar más celdas que el jugador contrario.</p>
                     <p class="font-weight-bold mb-0">Controles</p>
-                    <p>El jugador que tiene el turno elige un lado de una celda pulsando en la celda (un click: lado superior, dos clicks: lado derecho, tres clicks: lado inferior, cuatro clicks: lado izquierdo). Para confirmar la jugada pulsar el botón "Confirmar" del panel derecho.</p>
+                    <p>El jugador que tiene el turno elige un lado de una celda pulsando en la celda (un click: lado superior, dos clicks: lado derecho, tres clicks: lado inferior, cuatro clicks: lado izquierdo). Para confirmar la jugada y ceder el turno al otro jugador pulsar el botón "Confirmar" del panel derecho.</p>
                     <p>El último jugador que completa una celda (los cuatro lados ocupados por un jugador, sin importar quien) gana la celda y puede volver a ocupar un lado de una celda.</p>
                     <p>Se indica el jugador que tiene el turno activo mediante una flecha a la derecha del nombre del jugador.</p>
                 </div>
             </div> 
+            <!-- FIN Caja de Instrucciones-->
         </div>
+
+        <!-- Barra derecha de jugadores -->
         <div class="col-4  ">
             <div id="divj0" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3  rounded-bottom">  
-                <h2 class="j0 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 1 <i id="turno0" class="green fas fa-chevron-circle-left"></i></h2> 
+                <h2 id="name_pj0" class="j0 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 1 <i id="turno0" style="display: none;" class="green fas fa-chevron-circle-left"></i></h2> 
                 <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj0">0</kbd> Puntos</h4>
             </div> 
             
             <div id="divj1" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3 rounded-top">  
-                    <h2 class="j1 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 2 <i id="turno1" class="green fas fa-chevron-circle-left"></i></h2> 
-                    <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj1">0</kbd> Puntos</h4>
-                </div> 
-                <button class="btn btn-primary btn-block w-auto overflow-auto"  style="margin-top:-235px;margin-bottom:-5px;-right: 10px;" id="confirmar">Confirmar</button> 
+                <h2 id="name_pj1" class="j1 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 2 <i id="turno1" style="display: none;" class="green fas fa-chevron-circle-left"></i></h2> 
+                <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj1">0</kbd> Puntos</h4>
+            </div> 
+            <button class="btn btn-primary btn-block w-auto overflow-auto"  style="margin-top:-235px;margin-bottom:-5px;-right: 10px;" id="confirmar">Confirmar</button> 
         </div>
+        <!-- FIN Barra derecha de jugadores -->
+
     </div>
 
     <nav class="navbar  bg-dark fixed-bottom py-2">

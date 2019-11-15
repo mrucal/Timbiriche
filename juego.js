@@ -1,10 +1,10 @@
 class Juego{
 
-    constructor(id_tabla){        
-        this.table = new Table(id_tabla,4,5);
+    constructor(id_tabla, rows, cols, nj0, nj1){        
+        this.table = new Table(id_tabla,rows,cols);
         this.jugadores = new Array(2);
-        this.jugadores[0] = new Jugador("m","pj0");
-        this.jugadores[1] = new Jugador("a","pj1");
+        this.jugadores[0] = new Jugador(nj0,"pj0");
+        this.jugadores[1] = new Jugador(nj1,"pj1");
         this.turno = 0;
         $("#turno"+this.turno).show();
         $("#turno"+((this.turno+1)%2)).hide();

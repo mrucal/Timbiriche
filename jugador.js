@@ -4,6 +4,7 @@ class Jugador{
         this.nombre = nombre;
         this.puntos = 0;
         this.id_putnos = "#"+id;
+        $("#name_"+id).html(nombre);
     }
 
     incrementarPuntos(){
