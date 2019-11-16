@@ -95,27 +95,27 @@ body{
 }
 
 .ts{
-    border-top:3px solid LimeGreen;
+    border-top:3px solid Lime;
 }
 
 .ls{
-    border-left:3px solid LimeGreen;
+    border-left:3px solid Lime;
 }
 
 .rs{
-    border-right:3px solid LimeGreen;
+    border-right:3px solid Lime;
 }
 
 .bs{
-    border-bottom:3px solid LimeGreen;
+    border-bottom:3px solid Lime;
 }
 
 .green{
-    color: LimeGreen;
+    color: Lime;
 }
 
 .bgreen{
-    border:3px solid LimeGreen;
+    border:3px solid Lime;
 }
 
 table {
