@@ -43,12 +43,31 @@
     <!--<div class="fondo">
         <div class="contenedor">-->
 
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-primary bg-primary fixed-top py-0">
         <h2 class="navbar-text display-5"><kbd>Timbiriche</kbd> <small class="ml-4 font-weight-light text-dark"> Un juego sencillo muuuuy adictivo</small></h2>
     </nav>
+    <!-- Fin Barra de navegación -->
 
-    <div class="row mb-5" style="margin-top: 65px;">
-        <div class="col-8 pl-5">
+    <nav class="bg-warning fixed-bottom p-1" style="margin-bottom: 48px;">
+        <div class=" w-100 mx-auto ">
+            <div id="divj0" class="float-left w-auto r-20 border border-dark  bg-light px-3 py-0  rounded-right ">  
+                <h4 id="" class="name_pj0 j0 r-20 font-weight-bold text-dark mt-1 float-left" style="margin:-10px; margin-bottom: 5px; padding:15px 15px;">Jugador 1<i id="" style="display: none;" class="turno0 green fas fa-chevron-circle-left"></i></h4> 
+                <h4 class = "pl-2 pt-2 text-right float-right mt-1 ml-5"><kbd class="pj0 font-weight-bold py-2 px-4 " id="">0</kbd></h4>
+            </div> 
+            <button class="float-left btn btn-primary btn-block w-auto overflow-auto"  id="confirmar">Confirmar</button>
+            <div id="divj1" class="float-left w-auto r-20 border border-dark  bg-light px-3 py-0  rounded-left">  
+                <h4 class = "pl-2 pt-2 text-right float-left  mt-1 mr-5"><kbd class="pj1 font-weight-bold py-2 px-4" id="">0</kbd></h4>
+                <h4 id="" class="name_pj1 j1 r-20 font-weight-bold text-dark mt-1 float-right" style="margin:-10px; margin-bottom: 5px; padding:15px 15px;">Jugador 2<i id="" style="display: none;" class="turno1 green fas fa-chevron-circle-left"></i></h4> 
+                
+            </div>         
+        </div>
+        <!--<button class="btn btn-primary btn-block w-auto overflow-auto"  style="margin-top:-235px;margin-bottom:-5px;-right: 10px;" id="confirmar">Confirmar</button> -->
+    </nav>
+
+
+    <div class="row mb-5" style="margin-top: 50px;">
+        <div class="col-md-8 pl-5">
 
             <!-- Configuracion inicial -->
             <div id="div_config" class="border border-dark rounded-lg bg-light p-3 mb-2" >
@@ -110,15 +129,15 @@
         </div>
 
         <!-- Barra derecha de jugadores -->
-        <div class="col-4  ">
+        <div class="col-md-4 hide-md ">
             <div id="divj0" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3  rounded-bottom">  
-                <h2 id="name_pj0" class="j0 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 1<i id="turno0" style="display: none;" class="green fas fa-chevron-circle-left"></i></h2> 
-                <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj0">0</kbd> Puntos</h4>
+                <h2 id="" class="name_pj0 j0 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 1<i id="" style="display: none;" class="turno0 green fas fa-chevron-circle-left"></i></h2> 
+                <h4 class = "pl-2 pt-2 text-right"><kbd class="pj0 mr-4 font-weight-bold py-2 px-4" id="">0</kbd> Puntos</h4>
             </div> 
             
             <div id="divj1" class="r-20 border border-dark  bg-light p-3 pb-5 mb-3 rounded-top">  
-                <h2 id="name_pj1" class="j1 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 2<i id="turno1" style="display: none;" class="green fas fa-chevron-circle-left"></i></h2> 
-                <h4 class = "pl-2 pt-2 text-right"><kbd class="mr-4 font-weight-bold py-2 px-4" id="pj1">0</kbd> Puntos</h4>
+                <h2 id="" class="name_pj1 j1 r-20 font-weight-bold text-dark mt-1" style="margin:-10px; margin-bottom: 10px; padding:15px 15px;">Jugador 2<i id="" style="display: none;" class="turno1 green fas fa-chevron-circle-left"></i></h2> 
+                <h4 class = "pl-2 pt-2 text-right"><kbd class="pj1 mr-4 font-weight-bold py-2 px-4" id="">0</kbd> Puntos</h4>
             </div> 
             <button class="btn btn-primary btn-block w-auto overflow-auto"  style="margin-top:-235px;margin-bottom:-5px;-right: 10px;" id="confirmar">Confirmar</button> 
         </div>

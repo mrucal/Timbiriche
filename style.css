@@ -63,51 +63,51 @@ body{
 }
 
 .t0{
-    border-top:3px solid RoyalBlue;
+    border-top:5px solid RoyalBlue;
 }
 
 .l0{
-    border-left:3px solid RoyalBlue;
+    border-left:5px solid RoyalBlue;
 }
 
 .r0{
-    border-right:3px solid RoyalBlue;
+    border-right:5px solid RoyalBlue;
 }
 
 .b0{
-    border-bottom:3px solid RoyalBlue;
+    border-bottom:5px solid RoyalBlue;
 }
 
 .t1{
-    border-top:3px solid Crimson;
+    border-top:5px solid Crimson;
 }
 
 .l1{
-    border-left:3px solid Crimson;
+    border-left:5px solid Crimson;
 }
 
 .r1{
-    border-right:3px solid Crimson;
+    border-right:5px solid Crimson;
 }
 
 .b1{
-    border-bottom:3px solid Crimson;
+    border-bottom:5px solid Crimson;
 }
 
 .ts{
-    border-top:3px solid Lime;
+    border-top:5px solid Lime;
 }
 
 .ls{
-    border-left:3px solid Lime;
+    border-left:5px solid Lime;
 }
 
 .rs{
-    border-right:3px solid Lime;
+    border-right:5px solid Lime;
 }
 
 .bs{
-    border-bottom:3px solid Lime;
+    border-bottom:5px solid Lime;
 }
 
 .green{
@@ -115,7 +115,7 @@ body{
 }
 
 .bgreen{
-    border:3px solid Lime;
+    border:5px solid Lime;
 }
 
 table {
@@ -127,4 +127,22 @@ table {
 
 #instrucciones p{
     margin-bottom: 10px;
+}
+
+@media (min-width: 768px){
+    .hide-md{
+        display: block;
+    }
+    .show-md{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .hide-md{
+        display: none;
+    }
+    .show-md{
+        display: block;
+    }
 }

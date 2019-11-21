@@ -6,8 +6,8 @@ class Juego{
         this.jugadores[0] = new Jugador(nj0,"pj0");
         this.jugadores[1] = new Jugador(nj1,"pj1");
         this.turno = 0;
-        $("#turno"+this.turno).show();
-        $("#turno"+((this.turno+1)%2)).hide();
+        $(".turno"+this.turno).show();
+        $(".turno"+((this.turno+1)%2)).hide();
         this.ultima_celda = null;
         this.nclick = -1;
         this.positions = ["t","r","b","l"];
@@ -140,9 +140,9 @@ class Juego{
     cambiarTurno(){
 
         // Reiniciar valores y cambiar de jugador
-        $("#turno"+this.turno).hide();
+        $(".turno"+this.turno).hide();
         this.turno = (this.turno+1)%2;
-        $("#turno"+this.turno).show();
+        $(".turno"+this.turno).show();
         this.ultima_celda = null;
         this.nclick = -1; 
         
